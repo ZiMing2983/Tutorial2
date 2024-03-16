@@ -7,7 +7,18 @@ import "./App.css";
 
 function App() {
   // Add the toggleAnimation function here
-
+  function toggleAnimation() {
+    var logo = document.querySelector(".App-logo-clockwise");
+    var isLogoRotatingClockwise = logo !== null;
+    if (isLogoRotatingClockwise) {
+      logo.classList.remove("App-logo-clockwise");
+      logo.classList.add("App-logo-anti-clockwise");
+    } else {
+      logo = document.querySelector(".App-logo-anti-clockwise");
+      logo.classList.remove("App-logo-anti-clockwise");
+      logo.classList.add("App-logo-clockwise");
+    }
+  }
   return (
     <BrowserRouter>
       <Routes>
@@ -21,6 +32,10 @@ function App() {
                   Edit <code>src/App.js</code> and save to reload.
                 </p>
                 {/* Insert the "Toggle Spin Direction" button below this comment */}
+                <button className="spin-btn" onClick={() => toggleAnimation()}>
+                  Toggle Spin Direction
+                </button>
+                docker stop my-app
               </header>
             </div>
           }
